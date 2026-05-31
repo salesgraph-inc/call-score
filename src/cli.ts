@@ -142,6 +142,7 @@ async function runPlaybook(files: string[], flags: Args["flags"]): Promise<void>
   if (!files.length) fail("playbook needs analysis .json files or transcript files");
   const pack = loadPack(packDir(flags));
   const provider = makeProvider(flags);
+  const flagOutcome = str(flags.outcome) as DealOutcome | undefined;
   const analyses: CallAnalysis[] = [];
 
   for (const file of files) {
@@ -150,9 +151,16 @@ async function runPlaybook(files: string[], flags: Args["flags"]): Promise<void>
       if (!looksLikeAnalysis(parsed)) fail(`${file} is not a call analysis JSON`);
       analyses.push(parsed);
     } else {
-      log(`Analyzing ${file} …`);
+      const dealOutcome = outcomeFromFilename(file) ?? flagOutcome ?? "unknown";
+      log(`Analyzing ${file} [${dealOutcome}] …`);
       analyses.push(
-        await analyzeCall({ provider, pack, transcript: readFileSync(file, "utf8"), source: basename(file) }),
+        await analyzeCall({
+          provider,
+          pack,
+          transcript: readFileSync(file, "utf8"),
+          source: basename(file),
+          dealOutcome,
+        }),
       );
     }
   }

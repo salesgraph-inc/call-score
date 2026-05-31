@@ -59,21 +59,37 @@ Options:
 Examples:
 
 ```bash
-# Coach one call, tag the result so it helps the playbook later
+# Coach one call. The --outcome tag (won/lost/open) only weights the playbook
+# later — it does not change this call's coaching at all.
 call-score analyze examples/transcripts/founder-led-sample.txt --outcome won
 
-# Coach a folder of calls with Opus
+# Coach a whole folder with Opus. Writes a report.md + analysis.json per call.
 call-score analyze ./calls/*.txt -m claude-opus-4-8
 
-# Build a team playbook from everything you've analyzed
-call-score playbook ./call-score-out/*.analysis.json
-
-# Or go transcripts -> playbook in one shot
-call-score playbook ./calls/*.txt
-
-# Warm coaching: score the next call against the team's own mined playbook
+# Warm coaching: score the next call against the team's own mined playbook.
 call-score analyze next-call.txt --playbook ./call-score-out/playbook.json
 ```
+
+### Two ways to build a playbook
+
+Both analyze every transcript the same way (classify → outcome → coach). The only difference is whether the per-call results are **saved and reused**.
+
+```bash
+# Two-step (recommended): analyze once, then aggregate the saved analyses.
+call-score analyze ./calls/*.txt                       # writes report.md + analysis.json per call
+call-score playbook ./call-score-out/*.analysis.json   # 1 synthesis call, no re-analysis
+
+# One-shot: raw transcripts straight to a playbook, nothing per-call saved.
+call-score playbook ./calls/*.txt
+```
+
+|  | Two-step | One-shot |
+| --- | --- | --- |
+| Per-call coaching reports | saved to disk | computed, then discarded |
+| Rebuild the playbook later | re-reads cached JSONs — 1 call | re-analyzes every transcript again |
+| First-run LLM cost | same | same |
+
+Both honor `won/lost/open` filename tags and `--outcome`. Use **two-step** when you also want the individual reports, or expect to rebuild the playbook (add calls, re-tune) — you only pay to analyze each call once. Use **one-shot** for a quick team playbook from a folder when you don't need the per-call reports.
 
 This is the flywheel, made explicit: `analyze` your calls → `playbook` to distill what wins → re-run `analyze --playbook` so new calls are coached against your own exemplars, not just the textbook. It stays a single, manual loop on purpose — no persistence, no background ingestion. That stateful, always-on version is a different system.
 
