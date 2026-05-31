@@ -1,0 +1,258 @@
+# Each entry is one call type. `motion` is the orthogonal pre/post-sales axis.
+# `signals` are cues the classifier uses. `desiredOutcome` defines what "good"
+# looks like — its exitCriteria drive outcome inference and coaching.
+# `lenses` lists which scoring lenses (see lenses/) apply to this call type.
+
+- id: discovery
+  motion: pre_sales
+  label: Discovery
+  description: First substantive working session to uncover pain, process, and fit.
+  signals:
+    - Open-ended questions about current state and goals
+    - Probing pain, impact, and who is affected
+    - Little or no product demo
+    - Qualifying budget, authority, timeline
+  desiredOutcome:
+    goal: Uncover quantified pain, the decision process, and secure a concrete next step.
+    exitCriteria:
+      - At least one business pain tied to a metric or dollar impact
+      - Decision process and timeline understood (who, how, by when)
+      - Economic buyer and champion identified
+      - Mutual next step scheduled on the call
+    advanceSignal: A specific follow-up booked with a date (next meeting, intro, or eval step).
+  lenses: [meddpicc, command-of-message]
+
+- id: demo
+  motion: pre_sales
+  label: Demo / Solution Overview
+  description: Tailored walkthrough mapping capabilities to the buyer's stated pains.
+  signals:
+    - Screen share or product walkthrough
+    - Mapping features to previously stated needs
+    - Buyer reacting to capabilities
+  desiredOutcome:
+    goal: Map capabilities to the buyer's pains and earn a technical or business advance.
+    exitCriteria:
+      - Demo tailored to pains surfaced in discovery, not a generic tour
+      - Buyer confirmed shown capabilities address real pains
+      - Differentiation vs incumbent or alternative made explicit
+      - Next step toward validation or business case agreed
+    advanceSignal: Buyer agrees to a POV, technical deep-dive, or business-case review.
+  lenses: [meddpicc, command-of-message]
+
+- id: discovery_demo
+  motion: pre_sales
+  label: Discovery + Demo (Working Session)
+  description: A blended call that uncovers pain AND shows the product live in the same session. Common in founder-led motions and first working sessions.
+  signals:
+    - Open discovery questions interleaved with a live product walkthrough
+    - Seller shows their own product or account live while probing pain
+    - An early call that both qualifies and demonstrates rather than doing one or the other
+  desiredOutcome:
+    goal: Uncover and quantify pain, map the product to it live, and secure a concrete next step.
+    exitCriteria:
+      - At least one business pain tied to a metric or dollar impact
+      - Demo anchored to pains surfaced in the same call, not a generic tour
+      - Economic buyer and decision process identified
+      - Differentiation vs incumbent or alternative made explicit
+      - Mutual next step scheduled on the call
+    advanceSignal: A specific follow-up booked with a date (POV, business case, or stakeholder intro).
+  lenses: [meddpicc, command-of-message]
+
+- id: technical_validation
+  motion: pre_sales
+  label: Technical Validation (POV / POC)
+  description: Hands-on proof against agreed success criteria using the buyer's use case.
+  signals:
+    - Discussion of success criteria or test plan
+    - Buyer's own data, environment, or use cases
+    - Technical stakeholders involved
+  desiredOutcome:
+    goal: Prove the required capabilities against agreed success criteria with the buyer's own use case.
+    exitCriteria:
+      - Written success criteria agreed before the evaluation
+      - Buyer's team hands-on, not just watching
+      - Each success criterion explicitly validated or addressed
+      - Path from a successful POV to a commercial decision defined
+    advanceSignal: Buyer commits to a commercial conversation contingent on POV success.
+  lenses: [meddpicc, command-of-message]
+
+- id: business_case_alignment
+  motion: pre_sales
+  label: Business Case / Champion Enablement
+  description: Equip the champion to sell the value internally to the economic buyer.
+  signals:
+    - Discussion of ROI, budget, internal approval
+    - Building materials for an internal audience
+    - Talk of who else must sign off
+  desiredOutcome:
+    goal: Equip the champion with a quantified business case to sell internally to the economic buyer.
+    exitCriteria:
+      - Value quantified in the buyer's own metrics
+      - Champion can articulate why-us and why-now unaided
+      - Economic buyer's decision criteria reflected in the case
+      - Plan to get in front of the economic buyer agreed
+    advanceSignal: Meeting with the economic buyer or an internal review scheduled.
+  lenses: [meddpicc, command-of-message]
+
+- id: exec_briefing
+  motion: pre_sales
+  label: Executive Briefing / Alignment
+  description: Senior-stakeholder alignment on business value, risk, and close plan.
+  signals:
+    - Executive or VP-level attendees
+    - Business outcomes and strategy over features
+    - Discussion of risk, timeline, and sponsorship
+  desiredOutcome:
+    goal: Align senior stakeholders on business value, risk, and a mutual close plan.
+    exitCriteria:
+      - Conversation framed in business outcomes, not features
+      - Economic buyer's priorities and success metrics confirmed
+      - Risks and objections surfaced and addressed
+      - Mutual action plan toward signature agreed
+    advanceSignal: Executive sponsor endorses next steps and a close timeline.
+  lenses: [meddpicc, command-of-message]
+
+- id: negotiation
+  motion: pre_sales
+  label: Negotiation / Commercial
+  description: Reaching commercial agreement while protecting value and locking paper process.
+  signals:
+    - Pricing, discount, contract terms discussed
+    - Procurement, legal, or security mentioned
+    - Trading concessions and timelines
+  desiredOutcome:
+    goal: Reach commercial agreement while protecting value and locking the paper process.
+    exitCriteria:
+      - Value re-anchored before discussing price
+      - Concessions traded, not given away
+      - Paper process, security review, and signatories mapped
+      - Close plan with dates agreed
+    advanceSignal: Verbal agreement on terms and a target signature date.
+  lenses: [meddpicc, command-of-message]
+
+- id: go_no_go
+  motion: pre_sales
+  label: Go / No-Go Decision
+  description: Buyer decision point on whether to advance to the next deal phase.
+  signals:
+    - Explicit decision framing for the buyer
+    - Review of criteria, risks, and alternatives
+    - Discussion of whether to proceed
+  desiredOutcome:
+    goal: Secure the buyer's explicit decision to advance and the criteria behind it.
+    exitCriteria:
+      - Decision criteria and who owns them confirmed
+      - Remaining risks and blockers named
+      - Competitive status understood
+      - Explicit go decision, or the precise gap to one, identified
+    advanceSignal: Buyer commits to the next deal phase with named owners and dates.
+  lenses: [meddpicc, command-of-message]
+
+- id: onboarding
+  motion: post_sales
+  label: Onboarding / Kickoff
+  description: Post-sale kickoff to drive fast time-to-first-value.
+  signals:
+    - Implementation, rollout, or setup planning
+    - Defining success metrics and milestones
+    - Identifying users and admins
+  desiredOutcome:
+    goal: Drive fast time-to-first-value and confirm the success metrics that justify renewal.
+    exitCriteria:
+      - Success metrics and target dates agreed with the customer
+      - Key users identified and activated
+      - Implementation plan with owners and milestones set
+      - Executive sponsor re-confirmed
+    advanceSignal: Kickoff plan signed off with a first-value milestone date.
+  lenses: [command-of-message]
+
+- id: check_in
+  motion: post_sales
+  label: Check-in / Adoption Review
+  description: Ongoing review of adoption against the value promised.
+  signals:
+    - Usage, adoption, or health review
+    - Surfacing blockers to value
+    - No active expansion or renewal framing
+  desiredOutcome:
+    goal: Verify adoption against the value promised and surface risks or expansion signals early.
+    exitCriteria:
+      - Usage and adoption reviewed against the success metrics
+      - Blockers to value surfaced and owned
+      - Wins quantified for internal storytelling
+      - Next milestone or expansion signal identified
+    advanceSignal: Agreed action to remove an adoption blocker or pursue a new use case.
+  lenses: [command-of-message, meddpicc]
+
+- id: qbr
+  motion: post_sales
+  label: QBR / Business Review
+  description: Periodic review proving realized value and teeing up the next phase.
+  signals:
+    - Review of results vs original goals
+    - Executive sponsor present
+    - Roadmap, renewal, or expansion discussion
+  desiredOutcome:
+    goal: Demonstrate realized value, renew confidence, and tee up expansion.
+    exitCriteria:
+      - Realized value quantified vs the original business case
+      - Executive sponsor engaged and aligned on the roadmap
+      - Renewal posture and timeline understood
+      - Expansion opportunity identified and qualified
+    advanceSignal: Sponsor agrees to renewal or expansion next steps.
+  lenses: [command-of-message, meddpicc]
+
+- id: renewal
+  motion: post_sales
+  label: Renewal
+  description: Securing the renewal by re-proving value and re-qualifying the decision.
+  signals:
+    - Contract end date or renewal terms discussed
+    - Re-justifying value and budget
+    - Procurement re-engaging
+  desiredOutcome:
+    goal: Secure the renewal by re-proving value and re-qualifying the decision.
+    exitCriteria:
+      - Value realized quantified in the customer's metrics
+      - Economic buyer and decision process re-confirmed
+      - Risks to renewal named and mitigated
+      - Renewal terms and timeline agreed
+    advanceSignal: Renewal commitment with a target signature date.
+  lenses: [meddpicc, command-of-message]
+
+- id: expansion
+  motion: post_sales
+  label: Expansion / Upsell
+  description: Qualifying and advancing a new use case or seat / volume expansion.
+  signals:
+    - New use case, team, or product line discussed
+    - New budget owner appearing
+    - Growth in scope beyond the original deal
+  desiredOutcome:
+    goal: Qualify and advance a new use case or seat / volume expansion.
+    exitCriteria:
+      - New pain or use case quantified
+      - Budget owner and decision process for the expansion identified
+      - Value of the expansion tied to the customer's metrics
+      - Next step toward the expansion decision agreed
+    advanceSignal: Expansion proposal or business-case review scheduled.
+  lenses: [meddpicc, command-of-message]
+
+- id: escalation
+  motion: post_sales
+  label: Escalation / Churn Save
+  description: Containing risk and converting an issue into a recovery plan.
+  signals:
+    - Complaint, churn risk, or dissatisfaction
+    - Discussion of problems, failures, or unmet expectations
+    - Requests for credits or exit
+  desiredOutcome:
+    goal: Contain the risk, rebuild trust, and convert the issue into a recovery plan.
+    exitCriteria:
+      - Root cause and the customer's real concern surfaced
+      - Impact on their business acknowledged in their terms
+      - Concrete recovery plan with owners and dates agreed
+      - Executive alignment re-established
+    advanceSignal: Customer agrees to a recovery plan and a checkpoint date.
+  lenses: [command-of-message]

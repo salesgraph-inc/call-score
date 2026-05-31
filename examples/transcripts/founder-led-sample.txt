@@ -1,0 +1,29 @@
+Founder-led demo — Plotline × Crater Labs
+Date: 2026-05-02
+Attendees: Sam Okafor (Co-founder & CEO, Plotline), Dana Whitfield (VP Product, Crater Labs)
+
+Sam: Hey Dana, glad we could grab time. Honestly I'll just share my screen and show you what we've been building — this is literally my own Plotline account, I use it every day to run our own product analytics, so you're seeing the real thing.
+
+Dana: Love it. Go for it.
+
+Sam: Quick backstory — we went through YC last winter. I was a PM before this and I was so tired of waiting two weeks on a data team to answer "did anyone actually use the feature we shipped." So we built Plotline to answer that in ten seconds. Watch — I'll ask it: "retention of users who hit the new onboarding flow." Boom, there's the cohort, no SQL.
+
+Dana: Okay, that's slick. We're on Cohortly right now and honestly nobody touches it except one analyst.
+
+Sam: Right?? That's the exact thing. Everyone buys these heavy tools and then one person becomes the bottleneck. Let me show you funnels too — you just type the question, see, and it builds the chart. We shipped this last week, I'm honestly still kind of giddy about it.
+
+Dana: Nice. How does it handle our event volume, though? We do a few hundred million events a month.
+
+Sam: Oh, totally fine, we've got customers way bigger than that. Anyway — let me show you the AI summaries, this is my favorite part. It writes the "what changed this week" narrative for you...
+
+Dana: Sure. I mean, this is cool. What's pricing roughly?
+
+Sam: We're super flexible, we'll figure something out that works, I'm not worried about it. Honestly the thing I care about is just getting it in your hands. Let me get you a trial set up.
+
+Dana: Yeah, maybe. We're kind of heads-down on a launch for the next few weeks. But this is neat.
+
+Sam: Totally. I'll send you a login, play with it whenever. We move fast, so ping me anytime.
+
+Dana: Cool, appreciate it, Sam.
+
+Sam: Awesome — talk soon!

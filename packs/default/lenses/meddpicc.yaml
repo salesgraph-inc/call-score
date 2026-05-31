@@ -1,0 +1,78 @@
+id: meddpicc
+label: MEDDPICC
+description: >-
+  Qualification lens. Scores how completely the deal is qualified across the
+  eight MEDDPICC elements. Answers the question "do we actually know this deal
+  is real and winnable?"
+dimensions:
+  - id: metrics
+    label: Metrics
+    question: Are the buyer's success metrics and the quantified economic impact of the pain established?
+    scoringGuide:
+      "0": No metrics or quantified impact discussed
+      "1": Vague value mentioned, no numbers
+      "2": Buyer-stated metrics captured
+      "3": Quantified impact tied to the buyer's own numbers and validated
+
+  - id: economic_buyer
+    label: Economic Buyer
+    question: Is the person with budget authority identified and engaged?
+    scoringGuide:
+      "0": Economic buyer unknown
+      "1": Named but not engaged
+      "2": Identified and indirectly engaged via the champion
+      "3": Directly engaged and their criteria confirmed
+
+  - id: decision_criteria
+    label: Decision Criteria
+    question: Are the buyer's technical and business decision criteria known?
+    scoringGuide:
+      "0": Decision criteria unknown
+      "1": Assumed by the rep, not confirmed
+      "2": Stated by the buyer
+      "3": Confirmed, prioritized, and shaped in our favor
+
+  - id: decision_process
+    label: Decision Process
+    question: Is the path to a decision — steps, owners, and timing — mapped?
+    scoringGuide:
+      "0": Decision process unknown
+      "1": Partial or vague timeline
+      "2": Steps and timing understood
+      "3": Mutually agreed process with owners and dates
+
+  - id: paper_process
+    label: Paper Process
+    question: Is the procurement, legal, and security path to signature understood?
+    scoringGuide:
+      "0": Paper process not discussed
+      "1": Mentioned only at a high level
+      "2": Key steps and owners identified
+      "3": Fully mapped with a timeline to signature
+
+  - id: identify_pain
+    label: Identify Pain
+    question: Is a compelling business pain established and owned by the buyer?
+    scoringGuide:
+      "0": No clear pain
+      "1": Surface-level or rep-asserted pain
+      "2": Buyer-articulated pain
+      "3": Quantified, urgent pain the buyer clearly owns
+
+  - id: champion
+    label: Champion
+    question: Is there a champion with power and influence who sells for us internally?
+    scoringGuide:
+      "0": No champion identified
+      "1": A coach who lacks real power
+      "2": Champion identified, influence unproven
+      "3": Tested champion actively selling internally
+
+  - id: competition
+    label: Competition
+    question: Is the competitive landscape, including the status quo, known and addressed?
+    scoringGuide:
+      "0": Competitive landscape unknown
+      "1": Competitors named only
+      "2": Competitive position understood
+      "3": Differentiation landed and the buyer can repeat it

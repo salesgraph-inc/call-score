@@ -1,0 +1,61 @@
+id: command-of-message
+label: Command of the Message
+description: >-
+  Value-selling execution lens. Scores how well the rep tied pain to required
+  capabilities, quantified business value, differentiated, created urgency,
+  proved claims, and controlled the advance. Answers "did we sell value and
+  control the narrative?" — the complement to MEDDPICC's "is it qualified?"
+dimensions:
+  - id: required_capabilities
+    label: Required Capabilities
+    question: Did the rep connect the buyer's pains to the specific capabilities required to solve them?
+    scoringGuide:
+      "0": Pitched features with no link to pain
+      "1": Generic capability claims
+      "2": Capabilities linked to stated pains
+      "3": Buyer co-articulated the required capabilities
+
+  - id: business_value
+    label: Positive Business Outcomes
+    question: Were capabilities translated into quantified business outcomes the buyer cares about?
+    scoringGuide:
+      "0": No business-outcome framing
+      "1": Outcomes asserted, not quantified
+      "2": Outcomes tied to buyer metrics
+      "3": Buyer-validated, quantified outcomes with a clear value gap
+
+  - id: differentiation
+    label: Differentiation (Why Us)
+    question: Was unique differentiation versus alternatives and the status quo made clear?
+    scoringGuide:
+      "0": No differentiation; sounds like everyone else
+      "1": Generic strengths, not differentiated
+      "2": Clear differentiation versus named alternatives
+      "3": Differentiation the buyer can repeat back unaided
+
+  - id: why_now
+    label: Why Now (Cost of Inaction)
+    question: Were the negative consequences of inaction or a compelling event established to create urgency?
+    scoringGuide:
+      "0": No urgency; no cost of inaction
+      "1": Urgency asserted only by the rep
+      "2": Cost of inaction surfaced with the buyer
+      "3": Quantified cost of inaction or a compelling event the buyer owns
+
+  - id: proof
+    label: Proof
+    question: Were claims substantiated with proof — metrics, references, or relevant customer stories?
+    scoringGuide:
+      "0": Claims made with no proof
+      "1": Vague proof such as customers love it
+      "2": A relevant proof point offered
+      "3": Tailored, quantified proof matched to the buyer's situation
+
+  - id: advance_control
+    label: Control and Advance
+    question: Did the rep control the conversation and secure a specific, time-bound next step?
+    scoringGuide:
+      "0": No next step; no advance
+      "1": Vague we will follow up
+      "2": Next step agreed but soft on timing or owners
+      "3": Specific advance with owners and dates, mutually committed

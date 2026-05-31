@@ -1,0 +1,8 @@
+id: default
+label: Default — MEDDPICC + Command of the Message
+description: >-
+  General-purpose B2B SaaS coaching pack. Covers pre-sales and post-sales call
+  types, qualified with MEDDPICC and value-sold with Command of the Message.
+  Fork this directory to tailor call types, desired outcomes, and scoring
+  rubrics to your own motion. Each file under lenses/ is loaded as one lens;
+  call-types.yaml lists the call types and which lenses apply to each.
